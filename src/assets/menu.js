@@ -138,4 +138,32 @@ const menu = [
             "sos pomidorowy, mozarella, grillowana cukinia, bakłażan, papryka, pieczarki",
         type: "pizza",
     },
+    {
+        id: 19,
+        name: "Woda 500ml",
+        price: 8,
+        description: "gazowana lub niegazowana",
+        type: "drink",
+    },
+    {
+        id: 20,
+        name: "Lemoniada 400ml",
+        price: 12,
+        description: "z cytryną, miętą i syropem z cukru trzcinowego",
+        type: "drink",
+    },
+    {
+        id: 21,
+        name: "Sok świeżo wyciskany 400ml",
+        price: 15,
+        description: "pomarańczowy, grejpfrutowy, jabłkow",
+        type: "drink",
+    },
+    {
+        id: 22,
+        name: "Herbata mrożona 400ml",
+        price: 15,
+        description: "z cytryną, miętą, domowej roboty",
+        type: "drink",
+    },
 ];
