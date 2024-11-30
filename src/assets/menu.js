@@ -6,6 +6,7 @@ const menu = [
         description:
             "grillowane grzanki z oliwą z oliwek, pomidorami, bazylią i czosnkiem",
         type: "appetizer",
+        img: "",
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ const menu = [
         description:
             "sałatka z dojrzałych pomidorów, mozzarelli di bufala, śweżej bazylii i oliwy",
         type: "appetizer",
+        img: "",
     },
     {
         id: 3,
@@ -22,6 +24,7 @@ const menu = [
         description:
             "smażone kulki ryżowe nadziewane serem i sosem pomidorowym",
         type: "appetizer",
+        img: "",
     },
     {
         id: 4,
@@ -29,6 +32,7 @@ const menu = [
         price: 17,
         description: "klasyczna włoska zupa z dodatkiem makaronu",
         type: "soup",
+        img: "",
     },
     {
         id: 5,
@@ -36,6 +40,7 @@ const menu = [
         price: 18,
         description: "gęsta zupa pomidorowa z bazylią i kremowym mascarpone",
         type: "soup",
+        img: "",
     },
     {
         id: 6,
@@ -44,6 +49,7 @@ const menu = [
         description:
             "makaron z kremowym sosem na bazie jajek, huanciale i sera pecorino",
         type: "main-course",
+        img: "",
     },
     {
         id: 7,
@@ -52,6 +58,7 @@ const menu = [
         description:
             "warstwy makaronu z sosem bolońskim, beszamelowym i mozzarellą",
         type: "main-course",
+        img: "",
     },
     {
         id: 8,
@@ -60,6 +67,7 @@ const menu = [
         description:
             "miękkie kluseczki ziemniaczane z aromatycznym besto z bazylii i orzeszkami piniowymi",
         type: "main-course",
+        img: "",
     },
     {
         id: 9,
@@ -67,6 +75,7 @@ const menu = [
         price: 30,
         description: "szafranowe risotto z odrobiną parmezanu",
         type: "main-course",
+        img: "",
     },
     {
         id: 10,
@@ -75,6 +84,7 @@ const menu = [
         description:
             "sos pomidorowy, mozarella, świeża bazylia, oliwa z oliwek",
         type: "pizza",
+        img: "",
     },
     {
         id: 11,
@@ -83,6 +93,7 @@ const menu = [
         description:
             "sos pomidorowy, czosnek, oregano, oliwa z oliwek (bez sera)",
         type: "pizza",
+        img: "",
     },
     {
         id: 12,
@@ -91,6 +102,7 @@ const menu = [
         description:
             "mozarella, gorgonzola, parmezan, ser kozi, oliwa z oliwek",
         type: "pizza",
+        img: "",
     },
     {
         id: 13,
@@ -98,6 +110,7 @@ const menu = [
         price: 35,
         description: "sos pomidorowy, mozarella, pikantne pepperoni, oregano",
         type: "pizza",
+        img: "",
     },
     {
         id: 14,
@@ -106,6 +119,7 @@ const menu = [
         description:
             "sos pomidorowy, mozarella, pikantne pepperoni, papryczki chilli",
         type: "pizza",
+        img: "",
     },
     {
         id: 15,
@@ -113,6 +127,7 @@ const menu = [
         price: 36,
         description: "sos pomidorowy, mozarella, szynka parmeńska, pieczarki",
         type: "pizza",
+        img: "",
     },
     {
         id: 16,
@@ -121,6 +136,7 @@ const menu = [
         description:
             "sos pomidorowy, mozarella, szynka, karczochy, pieczarki, oliwki",
         type: "pizza",
+        img: "",
     },
     {
         id: 17,
@@ -129,6 +145,7 @@ const menu = [
         description:
             "sos pomidorowy, mozarella, krewetki, małże, kalmary, czosnek",
         type: "pizza",
+        img: "",
     },
     {
         id: 18,
@@ -137,6 +154,7 @@ const menu = [
         description:
             "sos pomidorowy, mozarella, grillowana cukinia, bakłażan, papryka, pieczarki",
         type: "pizza",
+        img: "",
     },
     {
         id: 19,
@@ -144,6 +162,7 @@ const menu = [
         price: 8,
         description: "gazowana lub niegazowana",
         type: "drink",
+        img: "",
     },
     {
         id: 20,
@@ -151,6 +170,7 @@ const menu = [
         price: 12,
         description: "z cytryną, miętą i syropem z cukru trzcinowego",
         type: "drink",
+        img: "",
     },
     {
         id: 21,
@@ -158,6 +178,7 @@ const menu = [
         price: 15,
         description: "pomarańczowy, grejpfrutowy, jabłkow",
         type: "drink",
+        img: "",
     },
     {
         id: 22,
@@ -165,5 +186,6 @@ const menu = [
         price: 15,
         description: "z cytryną, miętą, domowej roboty",
         type: "drink",
+        img: "",
     },
 ];
