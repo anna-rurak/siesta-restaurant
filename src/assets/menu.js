@@ -6,7 +6,7 @@ const menu = [
         description:
             "grillowane grzanki z oliwą z oliwek, pomidorami, bazylią i czosnkiem",
         type: "appetizer",
-        img: "",
+        img: "public/assets/dishes/1.jpg",
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const menu = [
         description:
             "sałatka z dojrzałych pomidorów, mozzarelli di bufala, śweżej bazylii i oliwy",
         type: "appetizer",
-        img: "",
+        img: "public/assets/dishes/1.jpg",
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const menu = [
         description:
             "smażone kulki ryżowe nadziewane serem i sosem pomidorowym",
         type: "appetizer",
-        img: "",
+        img: "public/assets/dishes/1.jpg",
     },
     {
         id: 4,
