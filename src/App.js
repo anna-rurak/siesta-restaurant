@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import LandingPage from "./components/Pages/LandingPage/LandingPage";
 
 const App = () => {
     return (
@@ -15,24 +16,7 @@ const App = () => {
             </header>
 
             {/* About Section */}
-            <main className="py-10 bg-[#f7f5ee]">
-                <section className="max-w-3xl mx-auto text-center">
-                    <div className="bg-[#d9e5d3] p-6 rounded-lg">
-                        <h2 className="text-2xl font-semibold mb-4 text-italian-green italic text-left">
-                            O NAS
-                        </h2>
-                        <p className="text-gray-700 text-justify">
-                            Niech czas płynie wolniej, a każdy kęs będzie
-                            przyjemnością, która zagości w Twoich myślach na
-                            dłużej. Przyjdź do naszej przestrzeni, gdzie możesz
-                            odetchnąć, poczuć się swobodnie i na chwilę
-                            zapomnieć o codzienności. Zabierz ze sobą bliskich,
-                            a my zadbamy o to by każda spędzoona chwila była
-                            pełna smaku i relaksu.
-                        </p>
-                    </div>
-                </section>
-            </main>
+            <LandingPage/>       
 
             {/* Footer Section */}
             <footer className="bg-white/70 bg-footer-texture py-6">
