@@ -8,12 +8,10 @@ export default function Footer(){
             <i class="fa-brands fa-facebook w-10 h-10 text-white " alt="Facebook"></i>
         </a>
         <a href="#">
-        <i class="fa-brands fa-twitter w-10 h-10 text-white" alt="Twitter"></i>
-
+            <i class="fa-brands fa-twitter w-10 h-10 text-white" alt="Twitter"></i>
         </a>
         <a href="#">
-        <i class="fa-brands fa-instagram w-10 h-10 text-white" alt="Instagram"></i>
-
+            <i class="fa-brands fa-instagram w-10 h-10 text-white" alt="Instagram"></i>
         </a>
     </div>
 </footer>
