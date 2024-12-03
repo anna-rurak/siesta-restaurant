@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import LandingPage from "./components/Pages/LandingPage/LandingPage";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
     return (
@@ -19,31 +20,7 @@ const App = () => {
             <LandingPage/>       
 
             {/* Footer Section */}
-            <footer className="bg-white/70 bg-footer-texture py-6">
-                <div className="flex justify-center gap-4">
-                    <a href="#">
-                        <img
-                            src="icon-facebook.png"
-                            alt="Facebook"
-                            className="w-8 h-8"
-                        />
-                    </a>
-                    <a href="#">
-                        <img
-                            src="icon-instagram.png"
-                            alt="Instagram"
-                            className="w-8 h-8"
-                        />
-                    </a>
-                    <a href="#">
-                        <img
-                            src="icon-twitter.png"
-                            alt="Twitter"
-                            className="w-8 h-8"
-                        />
-                    </a>
-                </div>
-            </footer>
+            <Footer/>
         </div>
     );
 };
