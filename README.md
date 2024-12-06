@@ -1,1 +1,8 @@
-Website of fictional italian restaurant "Siesta" :) 
+Website of fictional italian restaurant "Siesta". 
+
+Techstack: 
+JS
+React
+Tailwind
+HeadlessUI
+FontAwesome
