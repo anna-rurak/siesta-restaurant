@@ -1,4 +1,5 @@
 import React from "react";
+import Gallery from "../../Gallery/Gallery";
 
 export default function LandingPage() {
     return (
@@ -31,6 +32,7 @@ export default function LandingPage() {
                     </p>
                 </div>
             </section>
+            <Gallery />
         </main>
     );
 }
