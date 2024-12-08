@@ -11,7 +11,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const navigation = [
-        { name: "O nas", href: "#", current: true },
+        { name: "Home", href: "#", current: true },
+        { name: "O nas", href: "#", current: false },
         { name: "Menu", href: "#", current: false },
         { name: "Rezerwacje", href: "#", current: false },
         { name: "Kontakt", href: "#", current: false },
