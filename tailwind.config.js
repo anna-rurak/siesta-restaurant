@@ -8,7 +8,9 @@ module.exports = {
                 "footer-texture": "url('/public/assets/bg.jpg')",
             },
             fontSize: {
-                "page-title": "9em",
+                "page-title-lg": "9em",
+                "page-title-md": "8em",
+                "page-title-sm": "200px",
             },
             fontFamily: {
                 sans: ["Montserrat", "sans-serif"], // Zmieniono domyślną czcionkę na Montserrat
