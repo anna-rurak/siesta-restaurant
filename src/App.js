@@ -1,12 +1,10 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Menu from "./components/Pages/Menu/Menu";
+import Menu from "./Pages/Menu/Menu";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "../src/Pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import AboutUs from "./Pages/AboutUs/AboutUs";
-import MyMenu from "./Pages/MyMenu/MyMenu";
 import OnlineOrders from "./Pages/OnlineOrders/OnlineOrders";
 import TableReservation from "./Pages/TableReservation/TableReservation";
 import Contact from "./Pages/Contact/Contact";
@@ -23,7 +21,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
                         <Route path="/aboutus" element={<AboutUs />} />
-                        <Route path="/menu" element={<MyMenu />} />
+                        <Route path="/menu" element={<Menu />} />
                         <Route
                             path="/reservations"
                             element={<TableReservation />}
@@ -33,8 +31,6 @@ const App = () => {
                         <Route path="/orders" element={<OnlineOrders />} />
                     </Routes>
                 </section>
-
-                {/* <LandingPage /> */}
 
                 {/* Footer Section */}
                 <Footer />

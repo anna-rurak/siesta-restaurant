@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import menu from "../../../assets/menu.js";
+import menu from "../../assets/menu.js";
 import MenuContainer from "./MenuContainer.js";
 
 export default function Menu() {
@@ -18,10 +18,12 @@ export default function Menu() {
 
     return (
         <div
-            className={`mx-auto w-1/2 ${showMenu === false ? "mt-2" : "mt-12"}`}
+            className={`mx-auto w-1/2 max-w-3xl ${
+                showMenu === false ? "mt-2" : "mt-12"
+            }`}
         >
             <div
-                className={`duration-1000 overflow-hidden shadow-lg shadow-italian-green px-12 ${
+                className={`duration-1000 overflow-hidden shadow-lg shadow-italian-green px-12 rounded-lg ${
                     showMenu === false ? "h-0 py-0" : "h-auto py-8 "
                 }`}
             >
