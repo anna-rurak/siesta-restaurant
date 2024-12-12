@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
     Disclosure,
     DisclosureButton,
@@ -10,50 +11,49 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+    const location = useLocation();
+
     const navigation = [
-        { name: "Home", href: "#", current: true },
-        { name: "O nas", href: "#", current: false },
-        { name: "Menu", href: "#", current: false },
-        { name: "Rezerwacje", href: "#", current: false },
-        { name: "Kontakt", href: "#", current: false },
-        { name: "Zamów online", href: "#", current: false },
+        { name: "Home", href: "/" },
+        { name: "O nas", href: "/aboutus" },
+        { name: "Menu", href: "/menu" },
+        { name: "Rezerwacje", href: "/reservations" },
+        { name: "Kontakt", href: "/contact" },
+        { name: "Zamów online", href: "/orders" },
     ];
 
     return (
         <Disclosure as="nav" className="bg-white/70">
-            <div className=" max-w-full px-3">
+            <div className="max-w-full px-3">
                 <div className="relative flex h-14 items-center justify-between">
                     {/* Logo */}
-                    <div className="flex items-center pl-4  ">
-                        <h1 className="italic text-italian-green text-4xl text-left ">
+                    <div className="flex items-center pl-4">
+                        <h1 className="italic text-italian-green text-4xl">
                             Siesta
                         </h1>
                     </div>
 
                     {/* Navigation */}
                     <div className="hidden sm:flex flex-grow justify-center">
-                        <div className="flex space-x-* lg:space-x-9 md:space-x-5 sm:space-x-1">
+                        <div className="flex space-x-9">
                             {navigation.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
-                                    href={item.href}
-                                    aria-current={
-                                        item.current ? "page" : undefined
-                                    }
+                                    to={item.href}
                                     className={classNames(
-                                        item.current
+                                        location.pathname === item.href
                                             ? "bg-italian-green/50 text-white"
                                             : "text-italian-green hover:bg-italian-green/20 hover:text-italian-green",
                                         "rounded-lg px-3 py-1 text-lg font-medium"
                                     )}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
 
-                    {/* Mobile menu button*/}
+                    {/* Mobile menu button */}
                     <div className="absolute right-0 flex items-center sm:hidden">
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-1 text-italian-green hover:bg-italian-green/20 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute" />
@@ -71,23 +71,22 @@ export default function Navbar() {
                 </div>
             </div>
 
+            {/* Mobile menu panel */}
             <DisclosurePanel className="sm:hidden">
                 <div className="flex flex-col space-y-2 px-3 pb-2 pt-1">
                     {navigation.map((item) => (
-                        <DisclosureButton
+                        <Link
                             key={item.name}
-                            as="a"
-                            href={item.href}
-                            aria-current={item.current ? "page" : undefined}
+                            to={item.href}
                             className={classNames(
-                                item.current
+                                location.pathname === item.href
                                     ? "bg-italian-green/50 text-white"
-                                    : "text-italian-green hover:bg-italian-green/20 over:text-white",
+                                    : "text-italian-green hover:bg-italian-green/20 hover:text-italian-green",
                                 "block rounded-md py-1 px-3 text-sm font-medium"
                             )}
                         >
                             {item.name}
-                        </DisclosureButton>
+                        </Link>
                     ))}
                 </div>
             </DisclosurePanel>
