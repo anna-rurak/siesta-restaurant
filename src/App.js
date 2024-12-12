@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import Menu from "./components/Pages/Menu/Menu";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "../src/Pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";

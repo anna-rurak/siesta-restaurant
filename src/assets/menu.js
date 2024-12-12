@@ -189,3 +189,5 @@ export const menu = [
         img: " assets/dishes/22.jpg",
     },
 ];
+
+export default menu;
