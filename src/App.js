@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Menu from "./components/Pages/Menu/Menu";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "../src/Pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
@@ -12,35 +12,32 @@ import TableReservation from "./Pages/TableReservation/TableReservation";
 import Contact from "./Pages/Contact/Contact";
 
 const App = () => {
-    return (
-        <Router>
-            <div>
-                {/* Header Section */}
-                <Header />
+  return (
+    <Router>
+      <div>
+        {/* Header Section */}
+        <Header />
 
-                {/* About Section */}
-                <section>
-                    <Routes>
-                        <Route path="/" element={<LandingPage />} />
-                        <Route path="/aboutus" element={<AboutUs />} />
-                        <Route path="/menu" element={<MyMenu />} />
-                        <Route
-                            path="/reservations"
-                            element={<TableReservation />}
-                        />
-                        <Route path="/contact" element={<Contact />} />
+        {/* About Section */}
+        <section>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/menu" element={<MyMenu />} />
+            <Route path="/reservations" element={<TableReservation />} />
+            <Route path="/contact" element={<Contact />} />
 
-                        <Route path="/orders" element={<OnlineOrders />} />
-                    </Routes>
-                </section>
+            <Route path="/orders" element={<OnlineOrders />} />
+          </Routes>
+        </section>
 
-                {/* <LandingPage /> */}
+        {/* <LandingPage /> */}
 
-                {/* Footer Section */}
-                <Footer />
-            </div>
-        </Router>
-    );
+        {/* Footer Section */}
+        <Footer />
+      </div>
+    </Router>
+  );
 };
 
 export default App;
