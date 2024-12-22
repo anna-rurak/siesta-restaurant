@@ -14,7 +14,7 @@ export default function OnlineOrders() {
         <div className={`mx-auto max-w-6xl mt-12 grid grid-cols-3 gap-8`}>
             {/* MENU */}
             <div
-                className={`overflow-hidden shadow-lg shadow-italian-green px-12 rounded-lg h-auto py-8 bg-red-200 col-span-2`}
+                className={`overflow-hidden shadow-lg shadow-italian-green rounded-lg h-auto bg-italian-light-green col-span-2`}
             >
                 <OnlineOrdersContainer
                     type="Przystawki"
@@ -31,8 +31,8 @@ export default function OnlineOrders() {
 
             {/* ORDER SUMMARY */}
             <div className=" col-span-1 h-fit">
-                <div className="my-10 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green rounded-lg h-fit  ">
-                    <div className="w-full bg-italian-green py-6 text-center ">
+                <div className="my-8 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green rounded-lg h-fit  ">
+                    <div className="w-full bg-italian-green py-6 text-left pl-12 ">
                         <h1 className=" text-white text-xl font-bold italic">
                             Twoje zamówienie
                         </h1>
@@ -55,7 +55,7 @@ export default function OnlineOrders() {
 
                 {/* PAYMENT METHODS */}
                 <div className="my-10 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green rounded-lg h-fit  ">
-                    <div className="w-full bg-italian-green py-6 text-center ">
+                    <div className="w-full bg-italian-green py-6 text-left pl-12 ">
                         <h1 className=" text-white text-xl font-bold italic">
                             Metody płatności
                         </h1>
@@ -103,9 +103,10 @@ export default function OnlineOrders() {
                 </div>
 
                 {/* NEXT PAGE BUTTON */}
-                <button className="mx-auto text-center bg-italian-red p-3 w-56 rounded-lg text-white ">
+                <Button className="rounded-lg bg-italian-red hover:bg-italian-red-dark py-3 p-10 text-lg font-semibold text-white text-center mx-auto block">
                     Dane zamawiającego
-                </button>
+                    <i class="fa-solid fa-arrow-right ml-4"></i>
+                </Button>
             </div>
         </div>
     );

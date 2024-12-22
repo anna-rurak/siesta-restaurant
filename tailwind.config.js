@@ -19,6 +19,7 @@ module.exports = {
                 "italian-green": "#335E26",
                 "italian-red": "#942727",
                 "italian-light-green": "#C5CCBA",
+                "italian-red-dark": "#721C1C",
             },
         },
     },
