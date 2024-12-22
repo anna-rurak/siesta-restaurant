@@ -1,7 +1,4 @@
 import React from "react";
-import Menu from "./Pages/Menu/Menu";
-import Navbar from "./components/Navbar/Navbar";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "../src/Pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
@@ -10,6 +7,7 @@ import AboutUs from "./Pages/AboutUs/AboutUs";
 import OnlineOrders from "./Pages/OnlineOrders/OnlineOrders";
 import TableReservation from "./Pages/TableReservation/TableReservation";
 import Contact from "./Pages/Contact/Contact";
+import Menu from "./Pages/Menu/Menu";
 
 const App = () => {
     return (
@@ -23,7 +21,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
                         <Route path="/aboutus" element={<AboutUs />} />
-                        <Route path="/menu" element={<MyMenu />} />
+                        <Route path="/menu" element={<Menu />} />
                         <Route
                             path="/reservations"
                             element={<TableReservation />}
