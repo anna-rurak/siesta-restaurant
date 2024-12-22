@@ -1,6 +1,7 @@
 import React from "react";
 import menu from "../../assets/menu.js";
 import OnlineOrdersContainer from "./OnlineOrdersContainer.js";
+import { Button } from "@headlessui/react";
 
 export default function OnlineOrders() {
     const soups = menu.filter((dish) => dish.type === "soup");
@@ -10,9 +11,10 @@ export default function OnlineOrders() {
     const appetizers = menu.filter((dish) => dish.type === "appetizer");
 
     return (
-        <div className={`mx-auto w-3/4 max-w-3xl mt-12 grid grid-cols-2 gap-2`}>
+        <div className={`mx-auto max-w-6xl mt-12 grid grid-cols-3 gap-8`}>
+            {/* MENU */}
             <div
-                className={`overflow-hidden shadow-lg shadow-italian-green px-12 rounded-lg h-auto py-8 bg-red-200`}
+                className={`overflow-hidden shadow-lg shadow-italian-green px-12 rounded-lg h-auto py-8 bg-red-200 col-span-2`}
             >
                 <OnlineOrdersContainer
                     type="Przystawki"
@@ -26,7 +28,85 @@ export default function OnlineOrders() {
                 <OnlineOrdersContainer type="Pizza" typeArray={pizzas} />
                 <OnlineOrdersContainer type="Napoje" typeArray={drinks} />
             </div>
-            <div className="bg-blue-200"></div>
+
+            {/* ORDER SUMMARY */}
+            <div className=" col-span-1 h-fit">
+                <div className="my-10 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green rounded-lg h-fit  ">
+                    <div className="w-full bg-italian-green py-6 text-center ">
+                        <h1 className=" text-white text-xl font-bold italic">
+                            Twoje zamówienie
+                        </h1>
+                    </div>
+                    <div className="px-9 py-6">
+                        <div id="order"></div>
+                        <p className="font-semibold italic mt-8 w-full grid grid-cols-2">
+                            <span>Dostawa:</span>
+                            <span className="text-right">5,99 zł</span>
+                        </p>
+                        <p className="font-semibold italic w-full grid grid-cols-2">
+                            <span>RAZEM:</span>
+                            <span className="text-right">0,00 zł</span>
+                        </p>
+                        <p className="text-sm italic">
+                            min wartość zamówienia 50,00 zł
+                        </p>
+                    </div>
+                </div>
+
+                {/* PAYMENT METHODS */}
+                <div className="my-10 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green rounded-lg h-fit  ">
+                    <div className="w-full bg-italian-green py-6 text-center ">
+                        <h1 className=" text-white text-xl font-bold italic">
+                            Metody płatności
+                        </h1>
+                    </div>
+                    <div className="px-9 py-6">
+                        <ul>
+                            <li className="grid grid-cols-6">
+                                <label for="transfer" className="col-span-5">
+                                    Szybki przelew
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="transfer"
+                                    name="transfer"
+                                    value="transfer"
+                                    className="text-white col-span-1 w-4 h-4 "
+                                />
+                            </li>
+                            <li className="grid grid-cols-6">
+                                <label for="transfer" className="col-span-5">
+                                    BLIK{" "}
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="transfer"
+                                    name="transfer"
+                                    value="transfer"
+                                    className="text-white col-span-1 w-4 h-4 "
+                                />
+                            </li>
+                            <li className="grid grid-cols-6">
+                                <label for="transfer" className="col-span-5">
+                                    Gotówka przy odbiorze{" "}
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="transfer"
+                                    name="transfer"
+                                    value="transfer"
+                                    className="text-white col-span-1 w-4 h-4 "
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* NEXT PAGE BUTTON */}
+                <button className="mx-auto text-center bg-italian-red p-3 w-56 rounded-lg text-white ">
+                    Dane zamawiającego
+                </button>
+            </div>
         </div>
     );
 }
