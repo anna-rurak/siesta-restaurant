@@ -30,7 +30,7 @@ export default function OnlineOrders() {
             </div>
 
             {/* ORDER SUMMARY */}
-            <div className=" col-span-1 h-fit">
+            <div className=" col-span-1 h-fit ">
                 <div className="my-8 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green rounded-lg h-fit  ">
                     <div className="w-full bg-italian-green py-6 text-left pl-12 ">
                         <h1 className=" text-white text-xl font-bold italic">
