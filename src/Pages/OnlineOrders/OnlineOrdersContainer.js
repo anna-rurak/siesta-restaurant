@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MenuContainer({ type, typeArray }) {
+export default function OnlineOrdersContainer({ type, typeArray }) {
     return (
         <div>
             <h2 className="text-center mb-12 text-2xl text-italian-red font-bold">
