@@ -12,13 +12,30 @@ export default function OnlineOrders() {
     const drinks = menu.filter((dish) => dish.type === "drink");
     const appetizers = menu.filter((dish) => dish.type === "appetizer");
 
+    const handleOrderFormClick = () => {
+        const menuContainer = document.getElementById("menu-container");
+        const orderFormContainer = document.getElementById(
+            "order-form-container"
+        );
+        const btn = document.getElementById("order-form-btn");
+        if (btn.innerText === "Dane zamawiającego") {
+            menuContainer.classList.add("hidden");
+            orderFormContainer.classList.remove("hidden");
+            btn.innerText = `Powrót do menu`;
+        } else if (btn.innerText === "Powrót do menu") {
+            menuContainer.classList.remove("hidden");
+            orderFormContainer.classList.add("hidden");
+            btn.innerText = "Dane zamawiającego";
+        }
+    };
+
     return (
         <div className={`mx-auto max-w-6xl mt-12 grid grid-cols-3 gap-8`}>
             {/* MENU */}
             <div
                 className={`overflow-hidden shadow-lg shadow-italian-green rounded-lg h-auto bg-italian-light-green col-span-2`}
             >
-                <div id="menu-container" className="hidden">
+                <div id="menu-container" className="">
                     <OnlineOrdersContainer
                         type="Przystawki"
                         typeArray={appetizers}
@@ -31,14 +48,17 @@ export default function OnlineOrders() {
                     <OnlineOrdersContainer type="Pizza" typeArray={pizzas} />
                     <OnlineOrdersContainer type="Napoje" typeArray={drinks} />
                 </div>
-                <div id="order-form-container h-auto">
+                <div id="order-form-container" className="h-auto">
                     <OrderForm />
                 </div>
             </div>
 
             {/* ORDER SUMMARY */}
-            <div className=" col-span-1 h-fit">
-                <OrderSummaryContainer />
+            <div className=" col-span-1 h-fit ">
+                <OrderSummaryContainer
+                    className="hidden"
+                    id="order-form-container"
+                />
                 {/* PAYMENT METHODS */}
                 <div className="my-10 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green h-fit  ">
                     <div className="w-full bg-italian-green py-6 text-left pl-12 rounded-lg ">
@@ -89,9 +109,15 @@ export default function OnlineOrders() {
                 </div>
 
                 {/* NEXT PAGE BUTTON */}
-                <Button className="rounded-lg bg-italian-red hover:bg-italian-red-dark py-3 p-10 text-lg font-semibold text-white text-center mx-auto block">
-                    Dane zamawiającego
-                    <i className="fa-solid fa-arrow-right ml-4"></i>
+                <Button
+                    id="order-form-btn"
+                    className="rounded-lg bg-italian-red hover:bg-italian-red-dark py-3 p-10 text-lg font-semibold text-white text-center mx-auto block w-68"
+                    onClick={handleOrderFormClick}
+                >
+                    <p>
+                        Dane zamawiającego
+                        <i className="fa-solid fa-arrow-right ml-4"></i>
+                    </p>
                 </Button>
             </div>
         </div>
