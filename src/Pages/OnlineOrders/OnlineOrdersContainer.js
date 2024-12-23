@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import TypeHeader from "./components/TypeHeader";
-import { Button } from "@headlessui/react";
 import AddRemoveButton from "./components/AddRemoveButton";
 
 export default function OnlineOrdersContainer({ type, typeArray }) {
+    const [cartItems, setCartItems] = useState([]);
+
+    const handleAddToCart = (dish) => {
+        setCartItems((prev) => ({
+            ...prev,
+            [dish.name]: (prev[dish.name] || 0) + 1,
+        }));
+    };
+    const handleRemoveFromCart = (dish) => {
+        setCartItems((prev) => ({
+            ...prev,
+            [dish.name]: Math.max((prev[dish.name] || 0) - 1, 0),
+        }));
+    };
+
     return (
         <div>
             <TypeHeader type={type} />
 
+            {/* MENU */}
             {typeArray.map((dish, index) => (
                 <div
                     className={`mx-6 px-12 py-8 grid grid-cols-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_2fr] ${
@@ -33,7 +48,11 @@ export default function OnlineOrdersContainer({ type, typeArray }) {
                                 <p className="italic">{dish.description}</p>
                             </div>
                         </div>
-                        <AddRemoveButton />
+                        <AddRemoveButton
+                            onAdd={() => handleAddToCart(dish)}
+                            onRemove={() => handleRemoveFromCart(dish)}
+                            quantity={cartItems[dish.name] || 0}
+                        />
                     </div>
                 </div>
             ))}

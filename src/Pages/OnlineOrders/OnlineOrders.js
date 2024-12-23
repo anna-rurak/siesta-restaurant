@@ -2,6 +2,8 @@ import React from "react";
 import menu from "../../assets/menu.js";
 import OnlineOrdersContainer from "./OnlineOrdersContainer.js";
 import { Button } from "@headlessui/react";
+import OrderSummaryContainer from "./components/OrderSummaryContainer.js";
+import OrderForm from "./components/OrderForm.js";
 
 export default function OnlineOrders() {
     const soups = menu.filter((dish) => dish.type === "soup");
@@ -16,43 +18,27 @@ export default function OnlineOrders() {
             <div
                 className={`overflow-hidden shadow-lg shadow-italian-green rounded-lg h-auto bg-italian-light-green col-span-2`}
             >
-                <OnlineOrdersContainer
-                    type="Przystawki"
-                    typeArray={appetizers}
-                />
-                <OnlineOrdersContainer type="Zupy" typeArray={soups} />
-                <OnlineOrdersContainer
-                    type="Dania Główne"
-                    typeArray={mainCourses}
-                />
-                <OnlineOrdersContainer type="Pizza" typeArray={pizzas} />
-                <OnlineOrdersContainer type="Napoje" typeArray={drinks} />
+                <div id="menu-container" className="hidden">
+                    <OnlineOrdersContainer
+                        type="Przystawki"
+                        typeArray={appetizers}
+                    />
+                    <OnlineOrdersContainer type="Zupy" typeArray={soups} />
+                    <OnlineOrdersContainer
+                        type="Dania Główne"
+                        typeArray={mainCourses}
+                    />
+                    <OnlineOrdersContainer type="Pizza" typeArray={pizzas} />
+                    <OnlineOrdersContainer type="Napoje" typeArray={drinks} />
+                </div>
+                <div id="order-form-container h-auto">
+                    <OrderForm />
+                </div>
             </div>
 
             {/* ORDER SUMMARY */}
-            <div className=" col-span-1 h-fit ">
-                <div className="my-8 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green  h-fit  ">
-                    <div className="w-full bg-italian-green py-6 text-left pl-12 rounded-lg ">
-                        <h1 className=" text-white text-xl font-bold italic">
-                            Twoje zamówienie
-                        </h1>
-                    </div>
-                    <div className="px-9 py-6">
-                        <div id="order"></div>
-                        <p className="font-semibold italic mt-8 w-full grid grid-cols-2">
-                            <span>Dostawa:</span>
-                            <span className="text-right">5,99 zł</span>
-                        </p>
-                        <p className="font-semibold italic w-full grid grid-cols-2">
-                            <span>RAZEM:</span>
-                            <span className="text-right">0,00 zł</span>
-                        </p>
-                        <p className="text-sm italic">
-                            min wartość zamówienia 50,00 zł
-                        </p>
-                    </div>
-                </div>
-
+            <div className=" col-span-1 h-fit">
+                <OrderSummaryContainer />
                 {/* PAYMENT METHODS */}
                 <div className="my-10 mt-0 bg-italian-light-green overflow-hidden shadow-lg shadow-italian-green h-fit  ">
                     <div className="w-full bg-italian-green py-6 text-left pl-12 rounded-lg ">
@@ -105,7 +91,7 @@ export default function OnlineOrders() {
                 {/* NEXT PAGE BUTTON */}
                 <Button className="rounded-lg bg-italian-red hover:bg-italian-red-dark py-3 p-10 text-lg font-semibold text-white text-center mx-auto block">
                     Dane zamawiającego
-                    <i class="fa-solid fa-arrow-right ml-4"></i>
+                    <i className="fa-solid fa-arrow-right ml-4"></i>
                 </Button>
             </div>
         </div>

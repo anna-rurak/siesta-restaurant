@@ -8,6 +8,7 @@ import OnlineOrders from "./Pages/OnlineOrders/OnlineOrders";
 import TableReservation from "./Pages/TableReservation/TableReservation";
 import Contact from "./Pages/Contact/Contact";
 import Menu from "./Pages/Menu/Menu";
+import OrderForm from "./Pages/OnlineOrders/components/OrderForm";
 
 const App = () => {
     return (
@@ -27,8 +28,10 @@ const App = () => {
                             element={<TableReservation />}
                         />
                         <Route path="/contact" element={<Contact />} />
-
-                        <Route path="/orders" element={<OnlineOrders />} />
+                        <Route
+                            path="/orders"
+                            element={<OnlineOrders />}
+                        ></Route>
                     </Routes>
                 </section>
 
