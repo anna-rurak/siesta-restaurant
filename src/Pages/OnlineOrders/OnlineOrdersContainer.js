@@ -1,23 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import TypeHeader from "./components/TypeHeader";
 import AddRemoveButton from "./components/AddRemoveButton";
 
-export default function OnlineOrdersContainer({ type, typeArray }) {
-    const [cartItems, setCartItems] = useState([]);
-
-    const handleAddToCart = (dish) => {
-        setCartItems((prev) => ({
-            ...prev,
-            [dish.name]: (prev[dish.name] || 0) + 1,
-        }));
-    };
-    const handleRemoveFromCart = (dish) => {
-        setCartItems((prev) => ({
-            ...prev,
-            [dish.name]: Math.max((prev[dish.name] || 0) - 1, 0),
-        }));
-    };
-
+export default function OnlineOrdersContainer({
+    type,
+    typeArray,
+    onAdd,
+    onRemove,
+    cartItems,
+}) {
     return (
         <div>
             <TypeHeader type={type} />
@@ -25,6 +16,7 @@ export default function OnlineOrdersContainer({ type, typeArray }) {
             {/* MENU */}
             {typeArray.map((dish, index) => (
                 <div
+                    key={dish.name}
                     className={`mx-6 px-12 py-8 grid grid-cols-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_2fr] ${
                         index !== typeArray.length - 1
                             ? "border-b-2 border-b-italian-green"
@@ -49,8 +41,8 @@ export default function OnlineOrdersContainer({ type, typeArray }) {
                             </div>
                         </div>
                         <AddRemoveButton
-                            onAdd={() => handleAddToCart(dish)}
-                            onRemove={() => handleRemoveFromCart(dish)}
+                            onAdd={() => onAdd(dish)}
+                            onRemove={() => onRemove(dish)}
                             quantity={cartItems[dish.name] || 0}
                         />
                     </div>

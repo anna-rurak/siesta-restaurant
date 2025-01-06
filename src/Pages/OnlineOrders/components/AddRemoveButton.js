@@ -1,5 +1,4 @@
 import { Button } from "@headlessui/react";
-import { useState } from "react";
 
 export default function AddRemoveButton({ onAdd, onRemove, quantity }) {
     return (

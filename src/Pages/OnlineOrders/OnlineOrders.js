@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import menu from "../../assets/menu.js";
 import OnlineOrdersContainer from "./OnlineOrdersContainer.js";
 import { Button } from "@headlessui/react";
@@ -11,6 +11,8 @@ export default function OnlineOrders() {
     const mainCourses = menu.filter((dish) => dish.type === "main-course");
     const drinks = menu.filter((dish) => dish.type === "drink");
     const appetizers = menu.filter((dish) => dish.type === "appetizer");
+
+    const [cartItems, setCartItems] = useState({});
 
     const handleOrderFormClick = () => {
         const menuContainer = document.getElementById("menu-container");
@@ -29,6 +31,20 @@ export default function OnlineOrders() {
         }
     };
 
+    const handleAddToCart = (dish) => {
+        setCartItems((prev) => ({
+            ...prev,
+            [dish.name]: (prev[dish.name] || 0) + 1,
+        }));
+    };
+
+    const handleRemoveFromCart = (dish) => {
+        setCartItems((prev) => ({
+            ...prev,
+            [dish.name]: Math.max((prev[dish.name] || 0) - 1, 0),
+        }));
+    };
+
     return (
         <div className={`mx-auto max-w-6xl grid grid-cols-3 gap-8`}>
             {/* MENU */}
@@ -39,14 +55,38 @@ export default function OnlineOrders() {
                     <OnlineOrdersContainer
                         type="Przystawki"
                         typeArray={appetizers}
+                        onAdd={handleAddToCart}
+                        onRemove={handleRemoveFromCart}
+                        cartItems={cartItems}
                     />
-                    <OnlineOrdersContainer type="Zupy" typeArray={soups} />
+                    <OnlineOrdersContainer
+                        type="Zupy"
+                        typeArray={soups}
+                        onAdd={handleAddToCart}
+                        onRemove={handleRemoveFromCart}
+                        cartItems={cartItems}
+                    />
                     <OnlineOrdersContainer
                         type="Dania Główne"
                         typeArray={mainCourses}
+                        onAdd={handleAddToCart}
+                        onRemove={handleRemoveFromCart}
+                        cartItems={cartItems}
                     />
-                    <OnlineOrdersContainer type="Pizza" typeArray={pizzas} />
-                    <OnlineOrdersContainer type="Napoje" typeArray={drinks} />
+                    <OnlineOrdersContainer
+                        type="Pizza"
+                        typeArray={pizzas}
+                        onAdd={handleAddToCart}
+                        onRemove={handleRemoveFromCart}
+                        cartItems={cartItems}
+                    />
+                    <OnlineOrdersContainer
+                        type="Napoje"
+                        typeArray={drinks}
+                        onAdd={handleAddToCart}
+                        onRemove={handleRemoveFromCart}
+                        cartItems={cartItems}
+                    />
                 </div>
                 <div id="order-form-container" className="h-auto">
                     <OrderForm />
@@ -56,6 +96,7 @@ export default function OnlineOrders() {
             {/* ORDER SUMMARY */}
             <div className=" col-span-1 h-fit ">
                 <OrderSummaryContainer
+                    cartItems={cartItems}
                     className="hidden"
                     id="order-form-container"
                 />
@@ -77,7 +118,7 @@ export default function OnlineOrders() {
                                     id="transfer"
                                     name="transfer"
                                     value="transfer"
-                                    className="text-white col-span-1 w-4 h-4 "
+                                    className="text-white col-span-1 w-4 h-4"
                                 />
                             </li>
                             <li className="grid grid-cols-6">
