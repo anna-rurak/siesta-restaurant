@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
     Disclosure,
     DisclosureButton,
@@ -12,6 +12,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const location = useLocation();
+    const navigate = useNavigate();
 
     const navigation = [
         { name: "Home", href: "/" },
@@ -22,8 +23,24 @@ export default function Navbar() {
         { name: "Zamów online", href: "/orders" },
     ];
 
+    const handleNavClick = (href) => {
+        navigate(href);
+        console.log(href);
+        if (href !== "/") {
+            setTimeout(() => {
+                const heroHeight =
+                    document.querySelector(".bg-hero-pattern")?.offsetHeight ||
+                    0;
+                window.scrollTo({
+                    top: heroHeight,
+                    behavior: "smooth",
+                });
+            }, 100);
+        }
+    };
+
     return (
-        <Disclosure as="nav" className="bg-white/70">
+        <Disclosure as="nav" className="bg-white/70 fixed w-full z-50">
             <div className="max-w-full px-3">
                 <div className="relative flex h-14 items-center justify-between">
                     {/* Logo */}
@@ -37,9 +54,9 @@ export default function Navbar() {
                     <div className="hidden sm:flex flex-grow justify-center">
                         <div className="flex space-x-9">
                             {navigation.map((item) => (
-                                <Link
+                                <button
                                     key={item.name}
-                                    to={item.href}
+                                    onClick={() => handleNavClick(item.href)}
                                     className={classNames(
                                         location.pathname === item.href
                                             ? "bg-italian-green/50 text-white"
@@ -48,7 +65,7 @@ export default function Navbar() {
                                     )}
                                 >
                                     {item.name}
-                                </Link>
+                                </button>
                             ))}
                         </div>
                     </div>
@@ -75,18 +92,18 @@ export default function Navbar() {
             <DisclosurePanel className="sm:hidden">
                 <div className="flex flex-col space-y-2 px-3 pb-2 pt-1">
                     {navigation.map((item) => (
-                        <Link
+                        <button
                             key={item.name}
-                            to={item.href}
+                            onClick={() => handleNavClick(item.href)}
                             className={classNames(
                                 location.pathname === item.href
                                     ? "bg-italian-green/50 text-white"
                                     : "text-italian-green hover:bg-italian-green/20 hover:text-italian-green",
-                                "block rounded-md py-1 px-3 text-sm font-medium"
+                                "block rounded-md py-1 px-3 text-sm font-medium w-full text-left"
                             )}
                         >
                             {item.name}
-                        </Link>
+                        </button>
                     ))}
                 </div>
             </DisclosurePanel>

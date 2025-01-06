@@ -10,9 +10,9 @@ export default function Menu() {
     const appetizers = menu.filter((dish) => dish.type === "appetizer");
 
     return (
-        <div className={`mx-auto w-1/2 max-w-3xl mt-12`}>
+        <div className={`mx-auto w-1/2 max-w-3xl`}>
             <div
-                className={`duration-1000 overflow-hidden shadow-lg shadow-italian-green px-12 rounded-lg h-auto py-8`}
+                className={`border-solid border-italian-light-green border-8 duration-1000 overflow-hidden shadow-lg shadow-italian-green px-12 rounded-lg h-auto py-8`}
             >
                 <MenuContainer type="Przystawki" typeArray={appetizers} />
                 <MenuContainer type="Zupy" typeArray={soups} />

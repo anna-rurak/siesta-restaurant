@@ -17,7 +17,7 @@ const App = () => {
                 <Header />
 
                 {/* About Section */}
-                <section>
+                <section className="my-20">
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
                         <Route path="/aboutus" element={<AboutUs />} />

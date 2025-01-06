@@ -3,11 +3,11 @@ import Gallery from "../../components/Gallery/Gallery";
 
 export default function LandingPage() {
     return (
-        <main className="py-10 bg-[#f7f5ee]">
-            <section className="max-w-3xl mx-auto text-center">
-                <div className="bg-[#d9e5d3] p-6 rounded-lg my-10">
+        <main className="bg-white">
+            <section className="max-w-3xl mx-auto text-center ">
+                <div className="bg-[#d9e5d3] p-6 rounded-lg mb-10">
                     <h2 className="text-2xl font-semibold mb-4 text-italian-green italic text-left">
-                        O NAS
+                        CIAO! PRZYJDŹ DO NAS I ...
                     </h2>
                     <p className="text-gray-700 text-justify">
                         Ciesz się chwilą, która smakuje jak najpiękniejsze
@@ -29,6 +29,10 @@ export default function LandingPage() {
                         sam – to miejsce stworzyliśmy z myślą o Tobie. Smakuj,
                         śmiej się, rozmawiaj – a my zadbamy, byś zawsze wracał z
                         uśmiechem i pragnieniem kolejnych chwil pełnych smaku.
+                        Kolejnych chwil, które brzmią jak{" "}
+                        <strong className="text-italian-green italic">
+                            SIESTA!
+                        </strong>
                     </p>
                 </div>
             </section>

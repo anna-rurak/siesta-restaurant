@@ -11,7 +11,7 @@ export default function OnlineOrders() {
     const appetizers = menu.filter((dish) => dish.type === "appetizer");
 
     return (
-        <div className={`mx-auto max-w-6xl mt-12 grid grid-cols-3 gap-8`}>
+        <div className={`mx-auto max-w-6xl grid grid-cols-3 gap-8`}>
             {/* MENU */}
             <div
                 className={`overflow-hidden shadow-lg shadow-italian-green rounded-lg h-auto bg-italian-light-green col-span-2`}

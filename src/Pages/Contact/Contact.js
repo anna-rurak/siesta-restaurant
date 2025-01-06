@@ -49,7 +49,7 @@ export default function Contact() {
     };
 
     return (
-        <main className="py-10 bg-[#f7f5ee]">
+        <main className="bg-white">
             <h3 className="text-2xl font-semibold text-italian-green text-center mb-8">
                 Masz pytania? Chętnie pomożemy!
             </h3>

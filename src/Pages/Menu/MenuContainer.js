@@ -3,7 +3,7 @@ import React from "react";
 export default function MenuContainer({ type, typeArray }) {
     return (
         <div>
-            <h2 className="text-center mb-12 text-2xl text-italian-red font-bold">
+            <h2 className="text-center mb-12 text-2xl text-italian-green font-bold bg-italian-green/10 py-4 rounded-xl">
                 {type}
             </h2>
 
@@ -15,7 +15,7 @@ export default function MenuContainer({ type, typeArray }) {
                         alt={dish.name}
                     />
                     <div>
-                        <div className="flex justify-between mb-4 items-center">
+                        <div className="flex justify-between mb-4 items-center ">
                             <h3 className="text-xl font-semibold text-italian-green">
                                 {dish.name}
                             </h3>

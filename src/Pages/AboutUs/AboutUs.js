@@ -5,7 +5,7 @@ export default function AboutUs() {
     return (
         <div>
             <section className="max-w-3xl mx-auto text-center">
-                <div className="bg-[#d9e5d3] p-6 rounded-lg my-10">
+                <div className="bg-[#d9e5d3] p-6 rounded-lg">
                     <h2 className="text-2xl font-semibold mb-4 text-italian-green italic text-left">
                         O NAS
                     </h2>
